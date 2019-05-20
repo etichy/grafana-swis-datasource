@@ -1,0 +1,73 @@
+<query-editor-row query-ctrl="ctrl" can-collapse="false">
+    <div class="gf-form-inline">
+        <div class="gf-form gf-form--grow">
+            <code-editor content="ctrl.target.rawSql" datasource="ctrl.datasource" on-change="ctrl.panelCtrl.refresh()" data-mode="sql">
+            </code-editor>
+        </div>
+    </div>
+    <div class="gf-form-inline">
+        <div class="gf-form">
+            <label class="gf-form-label query-keyword">Format as</label>
+            <div class="gf-form-select-wrapper">
+                <select class="gf-form-input gf-size-auto" ng-model="ctrl.target.format" ng-options="f.value as f.text for f in ctrl.formats" ng-change="ctrl.refresh()"></select>
+            </div>
+        </div>
+        <div class="gf-form">
+            <label class="gf-form-label query-keyword" ng-click="ctrl.showHelp = !ctrl.showHelp">
+                Show Help
+                <i class="fa fa-caret-down" ng-show="ctrl.showHelp"></i>
+                <i class="fa fa-caret-right" ng-hide="ctrl.showHelp"></i>
+            </label>
+        </div>
+        <div class="gf-form" ng-show="ctrl.lastQueryMeta">
+            <label class="gf-form-label query-keyword" ng-click="ctrl.showLastQuerySQL = !ctrl.showLastQuerySQL">
+                Generated SWQL
+                <i class="fa fa-caret-down" ng-show="ctrl.showLastQuerySQL"></i>
+                <i class="fa fa-caret-right" ng-hide="ctrl.showLastQuerySQL"></i>
+            </label>
+        </div>
+        <div class="gf-form gf-form--grow">
+            <div class="gf-form-label gf-form-label--grow"></div>
+        </div>
+    </div>
+    <div class="gf-form" ng-show="ctrl.showLastQuerySQL">
+        <pre class="gf-form-pre">{{ctrl.lastQueryMeta.sql}}</pre>
+    </div>
+    <div class="gf-form" ng-show="ctrl.showHelp">
+        <pre class="gf-form-pre alert alert-info">Time series:
+Write SWQL queries to be used as Metric series or regular table. For Series there has to be defined time column. 
+As metric is taken first string column or next data column in row. In case there's multiple data columns, each column is taken as metrix suffix
+
+Optional:
+  - return column named <i>metric</i> to represent the series name.
+  - If multiple value columns are returned the metric column is used as prefix.
+  - If no column named metric is found the column name of the value column is used as series name
+
+
+Table:
+- return any set of columns
+
+Grafana macros to use:
+- $from - time interval start
+- $to - time interval end
+- $__interval - interval length for sampling 
+
+
+Example of group by and order by with $__timeGroup:
+SELECT
+  downsample(ObservationTimeStamp) AS time,
+  data.Node.Caption
+  AVG(AvgCpuLoad) as value
+FROM Orion.Nodes
+WHERE ObservationTimeStamp BETWEEN $from TO $to
+GROUP BY downsaple(ObservationTimeStamp), data.Node.Caption
+WITH GRANULARITY $__interval
+
+		</pre>
+    </div>
+    </div>
+
+    <div class="gf-form" ng-show="ctrl.lastQueryError">
+        <pre class="gf-form-pre alert alert-error">{{ctrl.lastQueryError}}</pre>
+    </div>
+</query-editor-row>
