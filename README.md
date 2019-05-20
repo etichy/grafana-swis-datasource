@@ -22,6 +22,7 @@ Time Sampling:
 
 
 Example of group by and order by with $__timeGroup:
+
 SELECT
   downsample(ObservationTimeStamp) AS time,
   data.Node.Caption
@@ -30,6 +31,7 @@ FROM Orion.Nodes
 WHERE ObservationTimeStamp BETWEEN $from TO $to
 GROUP BY downsaple(ObservationTimeStamp), data.Node.Caption
 WITH GRANULARITY $__interval
+
 
 
 ### If using Grafana 2.6
