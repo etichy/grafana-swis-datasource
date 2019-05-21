@@ -50,7 +50,9 @@ Table:
 Grafana macros to use:
 - $from - time interval start
 - $to - time interval end
-- $__interval - interval length for sampling 
+
+Time Sampling:
+- for sampling you can use function downsample([timecolumn]). 
 
 
 Example of group by and order by with $__timeGroup:
@@ -60,8 +62,7 @@ SELECT
   AVG(AvgCpuLoad) as value
 FROM Orion.Nodes
 WHERE ObservationTimeStamp BETWEEN $from TO $to
-GROUP BY downsaple(ObservationTimeStamp), data.Node.Caption
-WITH GRANULARITY $__interval
+GROUP BY downsample(ObservationTimeStamp), data.Node.Caption
 
 		</pre>
     </div>

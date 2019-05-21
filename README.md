@@ -18,11 +18,16 @@ Grafana macros to use:
 - $__interval - interval length for sampling 
 
 Time Sampling:
-- for sampling you can use function downsample([timecolumn]) decorated at the end with 'WITH GRANULATIRY $__interval'. 
+- for sampling you can use function downsample([timecolumn]), . 
 
+For variable you need to define __text and __value fields:
+``` sql 
+  SELECT Caption as __text, NodeID as __value FROM Orion.Nodes
+```
 
 Example of group by and order by with $__timeGroup:
 
+``` sql
 SELECT
   downsample(ObservationTimeStamp) AS time,
   data.Node.Caption
@@ -30,12 +35,5 @@ SELECT
 FROM Orion.Nodes
 WHERE ObservationTimeStamp BETWEEN $from TO $to
 GROUP BY downsaple(ObservationTimeStamp), data.Node.Caption
-WITH GRANULARITY $__interval
+```
 
-
-
-### If using Grafana 2.6
-NOTE!
-for grafana 2.6 please use [this version](https://github.com/grafana/simple-json-datasource/commit/b78720f6e00c115203d8f4c0e81ccd3c16001f94)
-
-Copy the data source you want to `/public/app/plugins/datasource/`. Then restart grafana-server. The new data source should now be available in the data source type dropdown in the Add Data Source View.
