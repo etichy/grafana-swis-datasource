@@ -2,9 +2,7 @@ import _ from "lodash";
 
 export class SwisDatasource {
 
-  url: string;
-  name: string;
-  id: any;
+  url: string;    
   q: any;
   backendSrv: any;
   templateSrv: any;
@@ -12,9 +10,7 @@ export class SwisDatasource {
   headers: any;
 
   constructor(instanceSettings, $q, backendSrv, templateSrv) {
-    this.url = instanceSettings.url;
-    this.name = instanceSettings.name;
-    this.id = instanceSettings.id;
+    this.url = instanceSettings.url;        
     this.q = $q;
     this.backendSrv = backendSrv;
     this.templateSrv = templateSrv;
@@ -60,7 +56,6 @@ export class SwisDatasource {
         refId: item.refId,
         intervalMs: options.intervalMs,
         maxDataPoints: options.maxDataPoints,
-        datasourceId: this.id,
         rawSql: item.rawSql,
         format: item.format,        
       };
@@ -94,24 +89,25 @@ export class SwisDatasource {
      swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
     }
 
-    query.rawSql = swql;
+    query.rawSql = swql;    
 
     var param = {
       query: this.resolveMacros(query.rawSql, options),
       parameters: {
         timeFrom: options.range.from,
         timeTo: options.range.to,
+        granularity: Math.max(Math.floor(options.intervalMs / 1000), 1), // TODO: unable to make lower interval than 1 second
       }
     };    
     query.options = options;
 
     return this.doRequest({
-      url: this.url + '/Query', method: 'POST',
-      data: {
-        query: param.query + " WITH SCHEMAONLY",
-        parameters: param.parameters
-      }
-    })
+        url: this.url + '/Query', method: 'POST',
+        data: {
+          query: param.query + " WITH SCHEMAONLY",
+          parameters: param.parameters
+        }
+      })
       .then(n => this.processMetadata(n, query))
       .then(n => this.doRequest({
         url: this.url + '/Query', method: 'POST',
@@ -133,10 +129,19 @@ export class SwisDatasource {
 
   resolveMacros(rawSql, options) {
 
+    // downsample(variable) is translated into - ADDSECOND(FLOOR(SecondDiff('1970-01-01T00:00:00', LastSync) / [granularity] + 1) * [granularity], '1970-01-01T00:00:00')
+    var r = /downsample\(([^\)]*)*\)/g;
+
+    rawSql = rawSql.replace(r, (match, group) => {
+      return "ADDSECOND(FLOOR(SecondDiff('1970-01-01T00:00:00', "+group+")/@granularity+1)*@granularity, '1970-01-01T00:00:00')";
+    });
+    
     // add sampling to all queries as it's harmless
     if (rawSql.indexOf('GRANULARITY') === -1 && rawSql.indexOf('downsample') !== -1) {
       rawSql += " WITH GRANULARITY '" + this.timeSpan(options.intervalMs) + "'";
     }
+
+
     return rawSql;
   }
 
@@ -171,12 +176,12 @@ export class SwisDatasource {
     if (query.format === 'time_series') {
       if (columns.length < 2) {
         // return { status: 'error', message: 'There has to be at least 2 columns' };
-        throw new Error('There has to be at least 2 columns');
+        throw new Error('There has to be at least 2 columns defined for Series');
       }
 
       if (metadata.timeColumnIndex === -1) {
         // return { status: 'error', message: 'First column has to be time column' };
-        throw new Error('First column has to be time column');
+        throw new Error('Missing DateTime column which is needed for Series');
       }
     }
 
@@ -218,7 +223,7 @@ export class SwisDatasource {
     var tagsIndex = metadata.columns.findIndex(n => n.name === 'tags');
 
     if (timeIndex === -1) {
-      throw new Error('Missing manadatory column [time] ');
+      return this.q.reject('Missing manadatory column DateTime column or named [time]');
     }
 
     var list = res.data.results.map( rowData => Object.keys(rowData).map( n => rowData[n])).map( row => {
@@ -288,8 +293,7 @@ export class SwisDatasource {
     for (var rowData of res.data.results) {
       var row = Object.keys(rowData).map(n => rowData[n]);
       var date = this.correctTime(row[metadata.timeColumnIndex]);
-
-      // all series with name
+      
       for (var i = 0; i < metadata.columns.length; i++) {
         if (i === metadata.timeColumnIndex || i === metadata.metricIndex)
           continue;
@@ -330,7 +334,7 @@ export class SwisDatasource {
   }
 
   annotationQuery(options) {
-    
+
     if (!options.annotation.query) {
       return this.q.reject({ message: 'Query missing in annotation definition' });
     }
@@ -365,6 +369,21 @@ export class SwisDatasource {
     options.withCredentials = this.withCredentials;
     options.headers = this.headers;
 
-    return this.backendSrv.datasourceRequest(options);
+    var res =  this.backendSrv.datasourceRequest(options).catch( n => 
+      {
+        console.log(n);
+        console.log(n.data.Message);
+
+        if( n.status === 404 ){
+          throw new Error('SWIS service is not available');
+        }
+
+        // some query exception
+        if( n.data.Message ) {
+          throw new Error(n.data.Message);
+        }
+      });
+
+    return res;
   }
 }

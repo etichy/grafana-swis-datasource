@@ -1,5 +1,5 @@
 {
-  "name": "swisjson",
+  "name": "SolarWinds SWIS REST",
   "id": "swis",
   "type": "datasource",
 
@@ -10,27 +10,31 @@
   "metrics": true,
   "annotations": true,
 
+  "queryOptions": {
+    "minInterval": true
+  },
+
 
   "info": {
-    "description": "SolarWinds SWIS SDK",
+    "description": "SolarWinds SWIS RESTAPI SDK",
     "author": {
       "name": "Eduard Tichy",
       "url": "https://solarwinds.com"
     },
     "logos": {
-      "small": "img/simpleJson_logo.svg",
-      "large": "img/simpleJson_logo.svg"
+      "small": "img/solarwinds-icon.svg",
+      "large": "img/solarwinds-icon.svg"
     },
     "links": [
-      {"name": "GitHub", "url": "https://github.com/grafana/simple-json-datasource"},
-      {"name": "MIT License", "url": "https://github.com/grafana/simple-json-datasource/blob/master/LICENSE"}
+      {"name": "GitHub", "url": "https://github.com/etichy/grafana-swis-datasource"},
+      {"name": "License", "url": "https://github.com/etichy/grafana-swis-datasource/blob/master/LICENSE"}
     ],
     "version": "1.0.0",
-    "updated": "2019-04-09"
+    "updated": "2019-05-24"
   },
 
   "dependencies": {
-    "grafanaVersion": "3.x.x",
+    "grafanaVersion": "5.x.x",
     "plugins": [ ]
   }
 }
