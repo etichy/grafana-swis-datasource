@@ -22,18 +22,19 @@ Grafana macros available to use:
 - $to - time interval end
 - $__interval - interval length for sampling 
 
-# Time Sampling:
+## Time Sampling:
 - For sampling you can use function downsample([timecolumn]). Minimum sampling interval is set to 1 second.
 
-# For variable queries:
+## For variable queries:
 - you need to define __text (manadatory) and __value columns:
 ``` sql 
   SELECT Caption as __text, NodeID as __value FROM Orion.Nodes
 ```
-# For annotation queries:
+## For annotation queries:
 - you need to specify datetime column (mandatory) and then you can set text and tags columns
 ``` sql
-  SELECT EventTime as time, Message as text, s.EventTypeProperties.Name as tags FROM Orion.Events s WHERE EventTime BETWEEN $from AND $to
+  SELECT EventTime as time, Message as text, s.EventTypeProperties.Name as tags 
+  FROM Orion.Events s WHERE EventTime BETWEEN $from AND $to
 ```
 
 Example of query with time sampling to display CPUload and memory per node:
