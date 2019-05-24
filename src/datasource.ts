@@ -1,6 +1,4 @@
 import _ from "lodash";
-import { MetricsPanelCtrl } from "app/plugins/sdk";
-
 
 export class SwisDatasource {
 
@@ -57,19 +55,14 @@ export class SwisDatasource {
   query(options) {
     const queries = _.filter(options.targets, item => {
       return item.hide !== true;
-    }).map(item => {
-      // narrow parameters
-      var tmp = item.rawSql;
-      tmp = tmp.replace(/\$from/g, '@timeFrom');
-      tmp = tmp.replace(/\$to/g, '@timeTo');
-
+    }).map(item => {      
       return {
         refId: item.refId,
         intervalMs: options.intervalMs,
         maxDataPoints: options.maxDataPoints,
         datasourceId: this.id,
-        rawSql: this.templateSrv.replace(tmp, options.scopedVars, this.interpolateVariable),
-        format: item.format,
+        rawSql: item.rawSql,
+        format: item.format,        
       };
     });
 
@@ -90,14 +83,27 @@ export class SwisDatasource {
       });
   }
 
-  doQuery(query, options) {    
+  doQuery(query, options) {  
+       
+    // narrow parameters
+    var swql  = query.rawSql;
+    swql = swql.replace(/\$from/g, '@timeFrom');
+    swql = swql.replace(/\$to/g, '@timeTo');    
+
+    if( options.scopedVars ) {
+     swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
+    }
+
+    query.rawSql = swql;
+
     var param = {
       query: this.resolveMacros(query.rawSql, options),
       parameters: {
         timeFrom: options.range.from,
         timeTo: options.range.to,
       }
-    };   
+    };    
+    query.options = options;
 
     return this.doRequest({
       url: this.url + '/Query', method: 'POST',
@@ -195,9 +201,36 @@ export class SwisDatasource {
     else if (query.format == 'search') {
       result = this.processQueryResultSearch(res, query);
     }
+    else if (query.format == 'annotation'){
+      result = this.processQueryResultAnnotation(res, query);
+    }
 
     //console.log( JSON.stringify(result));
     return result;
+  }
+
+  processQueryResultAnnotation(res, query){
+    var metadata = query.metadata;
+    var timeIndex = metadata.columns.findIndex(n => n.name === 'time');
+    if( timeIndex === -1 ) timeIndex = metadata.timeColumnIndex;
+    var textIndex = metadata.columns.findIndex(n => n.name === 'text');;
+    if( textIndex === -1 ) textIndex = metadata.metricIndex;
+    var tagsIndex = metadata.columns.findIndex(n => n.name === 'tags');
+
+    if (timeIndex === -1) {
+      throw new Error('Missing manadatory column [time] ');
+    }
+
+    var list = res.data.results.map( rowData => Object.keys(rowData).map( n => rowData[n])).map( row => {
+        return {
+          annotation: query.options.annotation,
+          time: this.correctTime(row[timeIndex]),
+          text: row[textIndex],
+          tags: row[tagsIndex] ? row[tagsIndex].trim().split(/\s*,\s*/) : []
+        };
+      });
+
+    return list;
   }
 
   processQueryResultSearch(res, query) {
@@ -230,6 +263,18 @@ export class SwisDatasource {
     };
   }
 
+  correctTime(dtString:string){    
+      // SWIS sometimes return time including time zone 02:00:34.675+3:00 instead of pure UTC      
+      var dtZoneIndex = dtString.indexOf('+');
+      if (dtZoneIndex !== -1) {
+        dtString = dtString.substr(0, dtZoneIndex) + 'Z';
+      }
+      else if (!dtString.endsWith('Z')) {
+        dtString += 'Z';
+      }
+      return Date.parse(dtString);
+  }
+
   processQueryResultMetric(res, query) {
     const metadata = query.metadata;
 
@@ -242,19 +287,7 @@ export class SwisDatasource {
 
     for (var rowData of res.data.results) {
       var row = Object.keys(rowData).map(n => rowData[n]);
-
-      var dtString = row[metadata.timeColumnIndex];
-      // SWIS sometimes return time including time zone 02:00:34.675+3:00 instead of pure UTC, 
-      // we need to narrow it
-      var dtZoneIndex = dtString.indexOf('+');
-      if (dtZoneIndex !== -1) {
-        dtString = dtString.substr(0, dtZoneIndex) + 'Z';
-      }
-      else if (!dtString.endsWith('Z')) {
-        dtString += 'Z';
-      }
-
-      var date = Date.parse(dtString);
+      var date = this.correctTime(row[metadata.timeColumnIndex]);
 
       // all series with name
       for (var i = 0; i < metadata.columns.length; i++) {
@@ -297,26 +330,18 @@ export class SwisDatasource {
   }
 
   annotationQuery(options) {
-    var query = this.templateSrv.replace(options.annotation.query, {}, 'glob');
-    var annotationQuery = {
-      range: options.range,
-      annotation: {
-        name: options.annotation.name,
-        datasource: options.annotation.datasource,
-        enable: options.annotation.enable,
-        iconColor: options.annotation.iconColor,
-        query: query
-      },
-      rangeRaw: options.rangeRaw
-    };
+    
+    if (!options.annotation.query) {
+      return this.q.reject({ message: 'Query missing in annotation definition' });
+    }
 
-    return this.doRequest({
-      url: this.url + '/annotations',
-      method: 'POST',
-      data: annotationQuery
-    }).then(result => {
-      return result.data;
-    });
+    var query = {
+      rawSql: options.annotation.query,
+      format: 'annotation',
+      metadata: {}
+    }
+    
+    return this.doQuery(query, options);
   }
 
   metricFindQuery(rawSql) {
@@ -333,20 +358,13 @@ export class SwisDatasource {
       }      
     }
 
-    return this.doQuery(query, options).then( n => {
-        console.log( JSON.stringify(n));
-        return n;
-    })
+    return this.doQuery(query, options);
   }
 
   doRequest(options) {
     options.withCredentials = this.withCredentials;
     options.headers = this.headers;
 
-    return this.backendSrv.datasourceRequest(options);/*.then( n => 
-      { 
-        console.log(JSON.stringify(n));
-        return {data:n} 
-    });*/
+    return this.backendSrv.datasourceRequest(options);
   }
 }
