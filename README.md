@@ -2,17 +2,15 @@
 
 SWIS (SolarWinds Information Service) uses SWQL language - [learn more](https://github.com/solarwinds/OrionSDK/wiki/About-SWIS)
 
-DataSource connect to SWIS HTTTP REST endpoint, unfortunately this endpoint doesn't support CORS. That means we can connect only via Server(default).
-And due to self-signed certificate you need to check option 'Skip TLS Verify'.
+DataSource connects to SWIS HTTP REST endpoint. Unfortunately this endpoint doesn't support CORS so can connect only via Server(default) 
+and due to self-signed certificate we need to check option 'Skip TLS Verify'.
 [Connection example](./docs/img/datasource_connect.jpg)
 
-Write SWQL queries to be used as Metric series or regular table. For Series there has to be defined time column. 
-As metric is taken first string column or next data column in row. In case there's multiple data columns, each column is taken as metrix suffix
+# Series:
+Write SWQL queries to be used as Metric series. For Series there has to be defined time column
+and as metric is taken first string column. In case there's multiple data columns, each column is taken as metrix suffix.
+This logic was taken from original ms sql grafana data source.
 
-Optional:
-  - return column named <i>metric</i> to represent the series name.
-  - If multiple value columns are returned the metric column is used as prefix.
-  - If no column named metric is found the column name of the value column is used as series name
 
 Table:
 - return any set of columns
