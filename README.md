@@ -7,7 +7,9 @@ DataSource connects to SWIS HTTP REST endpoint. As URl specify SWIS HTTP endpoin
 
 Unfortunately this endpoint doesn't support CORS so we can connect only via Server(default) 
 and due to self-signed certificate we need to check option 'Skip TLS Verify'. Anonymous connection
- is not permited so you need to fill in your orion account credentials
+ is not permited so you need to fill in your orion account credentials.
+ 
+  
 ![Connection example](./docs/img/datasource_connect.jpg)
 
 # SWIS query language
