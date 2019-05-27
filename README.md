@@ -60,5 +60,6 @@ SELECT
 FROM Orion.CPULoad a
 WHERE ObservationTimeStamp BETWEEN $from AND $to
 GROUP BY downsample(ObservationTimeStamp), a.Node.Caption, a.NodeID
+ORDER BY time DESC
 ```
 
