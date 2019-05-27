@@ -84,7 +84,21 @@ module.exports = function(config) {
 
       reporters: ['dots'],
 
-      logLevel: config.LOG_INFO,
+      logLevel: config.LOG_DEBUG,
+      browserConsoleLogOptions:{
+        level: 'debug',
+        terminal: true
+      },
+      client: {
+          browserConsoleLogOptions:{
+        level: 'debug',
+        terminal: true
+      },
+          captureConsole: true,
+            config: {
+                browserConsoleLogOptions: true,
+            }
+          },
 
       browsers: ['PhantomJS']
     });

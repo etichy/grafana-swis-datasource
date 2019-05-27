@@ -32,9 +32,9 @@
   integrity sha1-jaXGUwkVZT86Hzj9XxAdjD+AecU=
 
 "@types/lodash@^4.14.74":
-  version "4.14.123"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
-  integrity sha1-Ob5dIRR4yN072umO51u37+Sr/k0=
+  version "4.14.132"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/@types/lodash/-/lodash-4.14.132.tgz#8ce45ca8745ff2e004fac0de0ab46f61e390ffa0"
+  integrity sha1-jORcqHRf8uAE+sDeCrRvYeOQ/6A=
 
 abbrev@1:
   version "1.1.1"
@@ -206,9 +206,9 @@ assign-symbols@^1.0.0:
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
 
 async-each@^1.0.0:
-  version "1.0.2"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/async-each/-/async-each-1.0.2.tgz#8b8a7ca2a658f927e9f307d6d1a42f4199f0f735"
-  integrity sha1-i4p8oqZY+Sfp8wfW0aQvQZnw9zU=
+  version "1.0.3"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/async-each/-/async-each-1.0.3.tgz#b727dbf87d7651602f06f4d4ac387f47d91b0cbf"
+  integrity sha1-tyfb+H12UWAvBvTUrDh/R9kbDL8=
 
 async@^1.5.2, async@~1.5.2:
   version "1.5.2"
@@ -300,9 +300,9 @@ blob@0.0.4:
   integrity sha1-vPEwUspURj8w+fx+lbmkdjCpSSE=
 
 bluebird@^3.3.0:
-  version "3.5.4"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/bluebird/-/bluebird-3.5.4.tgz#d6cc661595de30d5b3af5fcedd3c0b3ef6ec5714"
-  integrity sha1-1sxmFZXeMNWzr1/O3TwLPvbsVxQ=
+  version "3.5.5"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
+  integrity sha1-qNCv1zJR7/u9X+OEp31zADwXpx8=
 
 bluebird@~2.9.34:
   version "2.9.34"
@@ -310,20 +310,20 @@ bluebird@~2.9.34:
   integrity sha1-L3tOyAIWMoqf3evfacjUlC/v99g=
 
 body-parser@^1.16.1:
-  version "1.18.3"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/body-parser/-/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
-  integrity sha1-WykhmP/dVTs6DyDe0FkrlWlVyLQ=
+  version "1.19.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
+  integrity sha1-lrJwnlfJxOCab9Zqj9l5hE9p8Io=
   dependencies:
-    bytes "3.0.0"
+    bytes "3.1.0"
     content-type "~1.0.4"
     debug "2.6.9"
     depd "~1.1.2"
-    http-errors "~1.6.3"
-    iconv-lite "0.4.23"
+    http-errors "1.7.2"
+    iconv-lite "0.4.24"
     on-finished "~2.3.0"
-    qs "6.5.2"
-    raw-body "2.3.3"
-    type-is "~1.6.16"
+    qs "6.7.0"
+    raw-body "2.4.0"
+    type-is "~1.6.17"
 
 body@^5.1.0:
   version "5.1.0"
@@ -424,10 +424,10 @@ bytes@1:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/bytes/-/bytes-1.0.0.tgz#3569ede8ba34315fab99c3e92cb04c7220de1fa8"
   integrity sha1-NWnt6Lo0MV+rmcPpLLBMciDeH6g=
 
-bytes@3.0.0:
-  version "3.0.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
-  integrity sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
+bytes@3.1.0:
+  version "3.1.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
+  integrity sha1-9s95M6Ng4FiPqf3oVlHNx/gF0fY=
 
 cache-base@^1.0.1:
   version "1.0.1"
@@ -467,7 +467,7 @@ caseless@~0.12.0:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chalk@^1.0.0, chalk@^1.1.1:
+chalk@1.1.3, chalk@^1.0.0, chalk@^1.1.1:
   version "1.1.3"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
   integrity sha1-qBFcVeSnAv5NFQq9OHKCKn4J/Jg=
@@ -585,9 +585,9 @@ colors@~1.1.2:
   integrity sha1-FopHAXVran9RoSzgyXv6KMCE7WM=
 
 colorspace@1.1.x:
-  version "1.1.1"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/colorspace/-/colorspace-1.1.1.tgz#9ac2491e1bc6f8fb690e2176814f8d091636d972"
-  integrity sha1-msJJHhvG+PtpDiF2gU+NCRY22XI=
+  version "1.1.2"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/colorspace/-/colorspace-1.1.2.tgz#e0128950d082b86a2168580796a0aa5d6c68d8c5"
+  integrity sha1-4BKJUNCCuGohaFgHlqCqXWxo2MU=
   dependencies:
     color "3.0.x"
     text-hex "1.0.x"
@@ -600,9 +600,9 @@ combine-lists@^1.0.0:
     lodash "^4.5.0"
 
 combined-stream@^1.0.6, combined-stream@~1.0.6:
-  version "1.0.7"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/combined-stream/-/combined-stream-1.0.7.tgz#2d1d24317afb8abe95d6d2c0b07b57813539d828"
-  integrity sha1-LR0kMXr7ir6V1tLAsHtXgTU52Cg=
+  version "1.0.8"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
+  integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
   dependencies:
     delayed-stream "~1.0.0"
 
@@ -621,10 +621,15 @@ component-emitter@1.1.2:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/component-emitter/-/component-emitter-1.1.2.tgz#296594f2753daa63996d2af08d15a95116c9aec3"
   integrity sha1-KWWU8nU9qmOZbSrwjRWpURbJrsM=
 
-component-emitter@1.2.1, component-emitter@^1.2.1:
+component-emitter@1.2.1:
   version "1.2.1"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
   integrity sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
+
+component-emitter@^1.2.1:
+  version "1.3.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
+  integrity sha1-FuQHD7qK4ptnnyIVhT7hgasuq8A=
 
 component-inherit@0.0.3:
   version "0.0.3"
@@ -647,13 +652,13 @@ concat-stream@1.6.2:
     typedarray "^0.0.6"
 
 connect@^3.6.0:
-  version "3.6.6"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/connect/-/connect-3.6.6.tgz#09eff6c55af7236e137135a72574858b6786f524"
-  integrity sha1-Ce/2xVr3I24TcTWnJXSFi2eG9SQ=
+  version "3.7.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/connect/-/connect-3.7.0.tgz#5d49348910caa5e07a01800b030d0c35f20484f8"
+  integrity sha1-XUk0iRDKpeB6AYALAw0MNfIEhPg=
   dependencies:
     debug "2.6.9"
-    finalhandler "1.1.0"
-    parseurl "~1.3.2"
+    finalhandler "1.1.2"
+    parseurl "~1.3.3"
     utils-merge "1.0.1"
 
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
@@ -682,9 +687,9 @@ copy-descriptor@^0.1.0:
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
 core-js@^2.2.0:
-  version "2.6.5"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
-  integrity sha1-RLyNJJ5/sv9dAOA0Gn/7lPv2eJU=
+  version "2.6.8"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/core-js/-/core-js-2.6.8.tgz#dc3a1e633a04267944e0cb850d3880f340248139"
+  integrity sha1-3DoeYzoEJnlE4MuFDTiA80AkgTk=
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -737,7 +742,7 @@ debug@2.3.3:
   dependencies:
     ms "0.7.2"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3:
+debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
@@ -864,7 +869,7 @@ enabled@1.0.x:
   dependencies:
     env-variable "0.0.x"
 
-encodeurl@~1.0.1:
+encodeurl@~1.0.2:
   version "1.0.2"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
@@ -962,9 +967,9 @@ eventemitter2@~0.4.13:
   integrity sha1-j2G3XN4BKy6esoTUVFWDtWQ7Yas=
 
 eventemitter3@^3.0.0:
-  version "3.1.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
-  integrity sha1-CQtNbNvWRe0Qv3UNS1QHlC17oWM=
+  version "3.1.2"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
+  integrity sha1-LT1I+cNGaY/Og6hdfWZOmFNd9uc=
 
 exit@~0.1.1:
   version "0.1.2"
@@ -1146,17 +1151,17 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-finalhandler@1.1.0:
-  version "1.1.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/finalhandler/-/finalhandler-1.1.0.tgz#ce0b6855b45853e791b2fcc680046d88253dd7f5"
-  integrity sha1-zgtoVbRYU+eRsvzGgARtiCU91/U=
+finalhandler@1.1.2:
+  version "1.1.2"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/finalhandler/-/finalhandler-1.1.2.tgz#b7e7d000ffd11938d0fdb053506f6ebabe9f587d"
+  integrity sha1-t+fQAP/RGTjQ/bBTUG9uur6fWH0=
   dependencies:
     debug "2.6.9"
-    encodeurl "~1.0.1"
+    encodeurl "~1.0.2"
     escape-html "~1.0.3"
     on-finished "~2.3.0"
-    parseurl "~1.3.2"
-    statuses "~1.3.1"
+    parseurl "~1.3.3"
+    statuses "~1.5.0"
     unpipe "~1.0.0"
 
 find-up@^1.0.0:
@@ -1238,9 +1243,9 @@ fs-extra@^1.0.0:
     klaw "^1.0.0"
 
 fs-minipass@^1.2.5:
-  version "1.2.5"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
-  integrity sha1-BsJ3IYRU7CiN93raVKA7hwKqy50=
+  version "1.2.6"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/fs-minipass/-/fs-minipass-1.2.6.tgz#2c5cc30ded81282bfe8a0d7c7c1853ddeb102c07"
+  integrity sha1-LFzDDe2BKCv+ig18fBhT3esQLAc=
   dependencies:
     minipass "^2.2.1"
 
@@ -1250,12 +1255,12 @@ fs.realpath@^1.0.0:
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
 fsevents@^1.0.0:
-  version "1.2.7"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/fsevents/-/fsevents-1.2.7.tgz#4851b664a3783e52003b3c66eb0eee1074933aa4"
-  integrity sha1-SFG2ZKN4PlIAOzxm6w7uEHSTOqQ=
+  version "1.2.9"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/fsevents/-/fsevents-1.2.9.tgz#3f5ed66583ccd6f400b5a00db6f7e861363e388f"
+  integrity sha1-P17WZYPM1vQAtaANtvfoYTY+OI8=
   dependencies:
-    nan "^2.9.2"
-    node-pre-gyp "^0.10.0"
+    nan "^2.12.1"
+    node-pre-gyp "^0.12.0"
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -1328,9 +1333,9 @@ glob@7.1.2:
     path-is-absolute "^1.0.0"
 
 glob@^7.1.1, glob@^7.1.3, glob@~7.1.1:
-  version "7.1.3"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
-  integrity sha1-OWCDLT8VdBCDQtr9OmezMsCWnfE=
+  version "7.1.4"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  integrity sha1-qmCKL2xXetNX4a5aXCbZqNGWklU=
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -1593,15 +1598,16 @@ hosted-git-info@^2.1.4:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha1-l/I2l3vW4SVAiTD/bePuxigewEc=
 
-http-errors@1.6.3, http-errors@~1.6.3:
-  version "1.6.3"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
-  integrity sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=
+http-errors@1.7.2:
+  version "1.7.2"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/http-errors/-/http-errors-1.7.2.tgz#4f5029cf13239f31036e5b2e55292bcfbcc85c8f"
+  integrity sha1-T1ApzxMjnzEDblsuVSkrz7zIXI8=
   dependencies:
     depd "~1.1.2"
     inherits "2.0.3"
-    setprototypeof "1.1.0"
-    statuses ">= 1.4.0 < 2"
+    setprototypeof "1.1.1"
+    statuses ">= 1.5.0 < 2"
+    toidentifier "1.0.0"
 
 http-parser-js@>=0.4.0:
   version "0.5.0"
@@ -1626,14 +1632,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-iconv-lite@0.4.23:
-  version "0.4.23"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/iconv-lite/-/iconv-lite-0.4.23.tgz#297871f63be507adcfbfca715d0cd0eed84e9a63"
-  integrity sha1-KXhx9jvlB63Pv8pxXQzQ7thOmmM=
-  dependencies:
-    safer-buffer ">= 2.1.2 < 3"
-
-iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
@@ -1990,6 +1989,13 @@ karma-expect@^1.1.3:
   dependencies:
     expect.js "^0.3.1"
 
+karma-mocha-reporter@2.0.3:
+  version "2.0.3"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/karma-mocha-reporter/-/karma-mocha-reporter-2.0.3.tgz#183d0cffe190de8506e2a5685e9b5ce43990a565"
+  integrity sha1-GD0M/+GQ3oUG4qVoXptc5DmQpWU=
+  dependencies:
+    chalk "1.1.3"
+
 karma-mocha@^1.3.0:
   version "1.3.0"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/karma-mocha/-/karma-mocha-1.3.0.tgz#eeaac7ffc0e201eb63c467440d2b69c7cf3778bf"
@@ -2018,7 +2024,7 @@ karma-systemjs@^0.16.0:
     lodash "^4.16.2"
     minimatch "^3.0.0"
 
-karma@^1.7.0:
+karma@^1.7.1:
   version "1.7.1"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/karma/-/karma-1.7.1.tgz#85cc08e9e0a22d7ce9cca37c4a1be824f6a2b1ae"
   integrity sha1-hcwI6eCiLXzpzKN8ShvoJPaisa4=
@@ -2263,17 +2269,17 @@ micromatch@^3.1.10:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
-mime-db@~1.38.0:
-  version "1.38.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/mime-db/-/mime-db-1.38.0.tgz#1a2aab16da9eb167b49c6e4df2d9c68d63d8e2ad"
-  integrity sha1-GiqrFtqesWe0nG5N8tnGjWPY4q0=
+mime-db@1.40.0:
+  version "1.40.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/mime-db/-/mime-db-1.40.0.tgz#a65057e998db090f732a68f6c276d387d4126c32"
+  integrity sha1-plBX6ZjbCQ9zKmj2wnbTh9QSbDI=
 
-mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.18, mime-types@~2.1.19:
-  version "2.1.22"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/mime-types/-/mime-types-2.1.22.tgz#fe6b355a190926ab7698c9a0556a11199b2199bd"
-  integrity sha1-/ms1WhkJJqt2mMmgVWoRGZshmb0=
+mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.19, mime-types@~2.1.24:
+  version "2.1.24"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/mime-types/-/mime-types-2.1.24.tgz#b6f8d0b3e951efb77dedeca194cff6d16f676f81"
+  integrity sha1-tvjQs+lR77d97eyhlM/20W9nb4E=
   dependencies:
-    mime-db "~1.38.0"
+    mime-db "1.40.0"
 
 mime@^1.3.4:
   version "1.6.0"
@@ -2389,10 +2395,10 @@ multimatch@^2.0.0:
     arrify "^1.0.0"
     minimatch "^3.0.0"
 
-nan@^2.9.2:
-  version "2.13.2"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
-  integrity sha1-9R3Hrma6fV1V4ebU2AkugCya7+c=
+nan@^2.12.1:
+  version "2.14.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
+  integrity sha1-eBj3IgJ7JFmobwKV1DTR/CM2xSw=
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -2417,11 +2423,11 @@ native-promise-only@^0.8.1:
   integrity sha1-IKMYwwy0X3H+et+/eyHJnBRy7xE=
 
 needle@^2.2.1:
-  version "2.2.4"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/needle/-/needle-2.2.4.tgz#51931bff82533b1928b7d1d69e01f1b00ffd2a4e"
-  integrity sha1-UZMb/4JTOxkot9HWngHxsA/9Kk4=
+  version "2.4.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/needle/-/needle-2.4.0.tgz#6833e74975c444642590e15a750288c5f939b57c"
+  integrity sha1-aDPnSXXERGQlkOFadQKIxfk5tXw=
   dependencies:
-    debug "^2.1.2"
+    debug "^3.2.6"
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
@@ -2441,10 +2447,10 @@ nise@^1.0.1:
     lolex "^2.3.2"
     path-to-regexp "^1.7.0"
 
-node-pre-gyp@^0.10.0:
-  version "0.10.3"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/node-pre-gyp/-/node-pre-gyp-0.10.3.tgz#3070040716afdc778747b61b6887bf78880b80fc"
-  integrity sha1-MHAEBxav3HeHR7YbaIe/eIgLgPw=
+node-pre-gyp@^0.12.0:
+  version "0.12.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/node-pre-gyp/-/node-pre-gyp-0.12.0.tgz#39ba4bb1439da030295f899e3b520b7785766149"
+  integrity sha1-ObpLsUOdoDApX4meO1ILd4V2YUk=
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
@@ -2661,10 +2667,10 @@ parseuri@0.0.5:
   dependencies:
     better-assert "~1.0.0"
 
-parseurl@~1.3.2:
-  version "1.3.2"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
-  integrity sha1-/CidTtiZMRlGDBViUyYs3I3mW/M=
+parseurl@~1.3.3:
+  version "1.3.3"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
+  integrity sha1-naGee+6NEt/wUT7Vt2lXeTvC6NQ=
 
 pascalcase@^0.1.1:
   version "0.1.1"
@@ -2789,9 +2795,9 @@ pseudomap@^1.0.2:
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
 psl@^1.1.24:
-  version "1.1.31"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/psl/-/psl-1.1.31.tgz#e9aa86d0101b5b105cbe93ac6b784cd547276184"
-  integrity sha1-6aqG0BAbWxBcvpOsa3hM1UcnYYQ=
+  version "1.1.32"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/psl/-/psl-1.1.32.tgz#3f132717cf2f9c169724b2b6caf373cf694198db"
+  integrity sha1-PxMnF88vnBaXJLK2yvNzz2lBmNs=
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -2813,15 +2819,15 @@ qjobs@^1.1.4:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/qjobs/-/qjobs-1.2.0.tgz#c45e9c61800bd087ef88d7e256423bdd49e5d071"
   integrity sha1-xF6cYYAL0IfviNfiVkI73Unl0HE=
 
-qs@6.5.2, qs@~6.5.2:
-  version "6.5.2"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
-
-qs@^6.4.0:
+qs@6.7.0, qs@^6.4.0:
   version "6.7.0"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
+
+qs@~6.5.2:
+  version "6.5.2"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
+  integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
 
 randomatic@^3.0.0:
   version "3.1.1"
@@ -2833,18 +2839,18 @@ randomatic@^3.0.0:
     math-random "^1.0.1"
 
 range-parser@^1.2.0:
-  version "1.2.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
-  integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
+  version "1.2.1"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
+  integrity sha1-PPNwI9GZ4cJNGlW4SADC8+ZGgDE=
 
-raw-body@2.3.3:
-  version "2.3.3"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"
-  integrity sha1-GzJOzmtXBuFThVvBFIxlu39uoMM=
+raw-body@2.4.0:
+  version "2.4.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"
+  integrity sha1-oc5vucm8NWylLoklarWQWeE9AzI=
   dependencies:
-    bytes "3.0.0"
-    http-errors "1.6.3"
-    iconv-lite "0.4.23"
+    bytes "3.1.0"
+    http-errors "1.7.2"
+    iconv-lite "0.4.24"
     unpipe "1.0.0"
 
 raw-body@~1.1.0:
@@ -3029,9 +3035,9 @@ resolve-url@^0.2.1:
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
 resolve@^1.10.0:
-  version "1.10.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
-  integrity sha1-O9qur0XMB/N1ZW39LlTtCBCxAbo=
+  version "1.11.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/resolve/-/resolve-1.11.0.tgz#4014870ba296176b86343d50b60f3b50609ce232"
+  integrity sha1-QBSHC6KWF2uGND1Qtg87UGCc4jI=
   dependencies:
     path-parse "^1.0.6"
 
@@ -3119,10 +3125,10 @@ set-value@^2.0.0:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
-setprototypeof@1.1.0:
-  version "1.1.0"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
-  integrity sha1-0L2FU2iHtv58DYGMuWLZ2RxU5lY=
+setprototypeof@1.1.1:
+  version "1.1.1"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
+  integrity sha1-fpWsskqpL1iF4KvvW6ExMw1K5oM=
 
 signal-exit@^3.0.0:
   version "3.0.2"
@@ -3323,15 +3329,10 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-"statuses@>= 1.4.0 < 2":
+"statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
-
-statuses@~1.3.1:
-  version "1.3.1"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
-  integrity sha1-+vUbnrdKrvOzrPStX2Gr8ky3uT4=
 
 string-template@~0.2.1:
   version "0.2.1"
@@ -3532,6 +3533,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+toidentifier@1.0.0:
+  version "1.0.0"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
+  integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
+
 tough-cookie@~2.4.3:
   version "2.4.3"
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/tough-cookie/-/tough-cookie-2.4.3.tgz#53f36da3f47783b0925afa06ff9f3b165280f781"
@@ -3567,13 +3573,13 @@ type-detect@4.0.8, type-detect@^4.0.0:
   resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=
 
-type-is@~1.6.16:
-  version "1.6.16"
-  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/type-is/-/type-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
-  integrity sha1-+JzjQVQcZysl7nrjxz3uOyvlAZQ=
+type-is@~1.6.17:
+  version "1.6.18"
+  resolved "http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm/type-is/-/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
+  integrity sha1-TlUs0F3wlGfcvE73Od6J8s83wTE=
   dependencies:
     media-typer "0.3.0"
-    mime-types "~2.1.18"
+    mime-types "~2.1.24"
 
 typedarray@^0.0.6:
   version "0.0.6"

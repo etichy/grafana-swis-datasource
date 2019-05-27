@@ -1,6 +1,6 @@
 {
-  "name": "SolarWinds SWIS DataSource",
-  "id": "solarwinds-swis-datasource",
+  "name": "SolarWinds SWIS REST",
+  "id": "swis",
   "type": "datasource",
 
   "partials": {
@@ -8,10 +8,14 @@
   },
 
   "metrics": true,  
-  "annotations": true,  
+  "annotations": true,
+
+  "queryOptions": {
+    "minInterval": true
+  },
 
   "info": {
-    "description": "DataSource plugin for SolarWinds via SWIS HTTP REST endpoint",
+    "description": "DataSource plugin for SolarWinds SWIS HTTP REST endpoint",
     "author": {
       "name": "Eduard Tichy",
       "url": "https://solarwinds.com"
