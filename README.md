@@ -62,4 +62,8 @@ WHERE ObservationTimeStamp BETWEEN $from AND $to
 GROUP BY downsample(ObservationTimeStamp), a.Node.Caption, a.NodeID
 ORDER BY time DESC
 ```
-
+## Installation Manually
+1. Download sources zip file. 
+2. Extract the zip file into the data/plugins subdirectory for Grafana.
+3. Restart the Grafana server
+4. To make sure the plugin was installed, check the list of installed data sources.

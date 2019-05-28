@@ -14,7 +14,6 @@
     "description": "DataSource plugin for SolarWinds via SWIS HTTP REST endpoint",
     "author": {
       "name": "Eduard Tichy",
-      "url": "https://solarwinds.com"
     },
     "logos": {
       "small": "img/solarwinds-icon.svg",
