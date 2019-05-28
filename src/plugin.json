@@ -21,7 +21,7 @@
     },
     "links": [
       {"name": "GitHub", "url": "https://github.com/etichy/grafana-swis-datasource"},
-      {"name": "License", "url": "https://github.com/etichy/grafana-swis-datasource/blob/master/LICENSE"}
+      {"name": "License", "url": "https://github.com/etichy/grafana-swis-datasource/blob/develop/LICENSE"}
     ],
     "version": "1.0.0",
     "updated": "2019-05-24"
