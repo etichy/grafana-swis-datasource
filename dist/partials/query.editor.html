@@ -43,7 +43,6 @@ Optional:
   - If multiple value columns are returned the metric column is used as prefix.
   - If no column named metric is found the column name of the value column is used as series name
 
-
 Table:
 - return any set of columns
 
@@ -51,19 +50,20 @@ Grafana macros to use:
 - $from - time interval start
 - $to - time interval end
 
-Time Sampling:
-- for sampling you can use function downsample([timecolumn]). 
+Time Series:
+- for sampling you must use function downsample([timecolumn]). TimeInterval is used from grafanata $__interval variable
+- you must also sort result by time
 
-
-Example of group by and order by with $__timeGroup:
+Example time series query:
 SELECT
-  downsample(ObservationTimeStamp) AS time,
-  data.Node.Caption
-  AVG(AvgCpuLoad) as value
-FROM Orion.Nodes
-WHERE ObservationTimeStamp BETWEEN $from TO $to
-GROUP BY downsample(ObservationTimeStamp), data.Node.Caption
-
+     downsample(ObservationTimeStamp) as time,
+     a.Node.Caption,
+     AVG(AvgLoad) as CpuLoad,
+     AVG(AvgMemoryUsed) as MemoryUsed
+FROM Orion.CPULoad a
+WHERE ObservationTimeStamp BETWEEN $from AND $to
+GROUP BY downsample(ObservationTimeStamp), a.Node.Caption, a.NodeID
+ORDER BY time DESC
 		</pre>
     </div>
     </div>

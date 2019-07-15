@@ -21,7 +21,7 @@ System.register(["lodash"], function(exports_1) {
                 }
                 SwisDatasource.prototype.testDatasource = function () {
                     return this.doRequest({
-                        url: this.url + '/openapi.json',
+                        url: this.url + '/Query?query=SELECT Description FROM System.NullEntity',
                         method: 'GET',
                     }).then(function (response) {
                         if (response.status === 200) {

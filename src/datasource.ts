@@ -23,7 +23,7 @@ export class SwisDatasource {
 
   testDatasource() {
     return this.doRequest({
-      url: this.url + '/openapi.json',
+      url: this.url + '/Query?query=SELECT Description FROM System.NullEntity',
       method: 'GET',
     }).then(response => {
       if (response.status === 200) {
