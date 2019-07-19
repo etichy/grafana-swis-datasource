@@ -13,7 +13,7 @@
   "info": {
     "description": "DataSource plugin for SolarWinds via SWIS HTTP REST endpoint",
     "author": {
-      "name": "Eduard Tichy",
+      "name": "Eduard Tichy"
     },
     "logos": {
       "small": "img/solarwinds-icon.svg",
