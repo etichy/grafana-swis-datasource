@@ -76,9 +76,7 @@ System.register(["lodash"], function(exports_1) {
                     var swql = query.rawSql;
                     swql = swql.replace(/\$from/g, '@timeFrom');
                     swql = swql.replace(/\$to/g, '@timeTo');
-                    if (options.scopedVars) {
-                        swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
-                    }
+                    swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
                     query.rawSql = swql;
                     var param = {
                         query: this.resolveMacros(query.rawSql, options),
@@ -313,7 +311,8 @@ System.register(["lodash"], function(exports_1) {
                         range: {
                             from: '',
                             to: ''
-                        }
+                        },
+                        scopedVars: {}
                     };
                     return this.doQuery(query, options);
                 };

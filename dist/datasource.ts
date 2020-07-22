@@ -88,9 +88,7 @@ export class SwisDatasource {
     swql = swql.replace(/\$from/g, '@timeFrom');
     swql = swql.replace(/\$to/g, '@timeTo');    
 
-    if( options.scopedVars ) {
-     swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
-    }
+    swql = this.templateSrv.replace(swql, options.scopedVars, this.interpolateVariable);
 
     query.rawSql = swql;    
 
@@ -363,7 +361,8 @@ export class SwisDatasource {
       range : {
         from:'',
         to:''
-      }      
+      },
+      scopedVars: {}
     }
 
     return this.doQuery(query, options);
