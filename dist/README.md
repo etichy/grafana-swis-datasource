@@ -62,8 +62,21 @@ WHERE ObservationTimeStamp BETWEEN $from AND $to
 GROUP BY downsample(ObservationTimeStamp), a.Node.Caption, a.NodeID
 ORDER BY time DESC
 ```
+## Running Grafana on Docker
+`docker run -d -p 3000:3000 --name grafana grafana/grafana-enterprise:<version number>`
+
 ## Installation Manually
+
 1. Download sources zip file. 
 2. Extract the zip file into the data/plugins subdirectory for Grafana.
 3. Restart the Grafana server
 4. To make sure the plugin was installed, check the list of installed data sources.
+
+## Installing Plugins from Source URL on Docker
+`
+docker run -d \
+  -p 3000:3000 \
+  --name=grafana \
+  -e "GF_INSTALL_PLUGINS=http://<url>/<filename>.zip;custom-plugin,grafana-swis-datasource" \
+  grafana/grafana-enterprise
+`
