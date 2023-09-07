@@ -6,10 +6,10 @@
   "partials": {
     "config": "public/app/plugins/datasource/swis/partials/config.html"
   },
-
-  "metrics": true,  
-  "annotations": true,  
-
+  "metrics": true,
+  "annotations": true,
+  "alerting": true,
+  "backend": false,
   "info": {
     "description": "DataSource plugin for SolarWinds via SWIS HTTP REST endpoint",
     "author": {
