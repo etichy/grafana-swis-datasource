@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true, // was false
   "compilerOptions": {
       "target": "ES5",
       "module": "system",
